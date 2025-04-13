@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Refactor DOCS.md to remove outdated sections and improve structure 
 - Remove CHANGELOG.md as it is no longer needed for the Technitium DNS Server add-on. 
 - Add README for Technitium DNS Server add-on with features, installation instructions, and support information 
 - Merge pull request #1 from staerk-ha-addons/cert
