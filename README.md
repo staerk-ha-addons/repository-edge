@@ -4,8 +4,9 @@
 
 ## WARNING! THIS IS AN EDGE VERSION!
 
-This Home Assistant Add-ons repository contains edge builds of add-ons.
-Edge builds add-ons are based upon the latest development version.
+> [!CAUTION]
+> This Home Assistant Add-ons repository contains edge builds of add-ons.
+> Edge builds add-ons are based upon the latest development version.
 
 - They may not work at all.
 - They might stop working at any time.
@@ -84,5 +85,7 @@ MIT License - Copyright (c) 2025 Jeppe Stærk
 [technitium-dns-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
 [technitium-dns-armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
 [technitium-dns-i386-shield]: https://img.shields.io/badge/i386-no-red.svg
+[frenck]: https://github.com/frenck
+[ha-addons]: https://addons.community/
 [license]: https://github.com/staerk-ha-addons/repository/blob/main/LICENSE
 [license-shield]: https://img.shields.io/github/license/staerk-ha-addons/repository.svg
