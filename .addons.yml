@@ -3,5 +3,5 @@ channel: edge
 addons:
   technitium-dns:
     repository: staerk-ha-addons/addon-technitium-dns
-    target: adguard
+    target: technitium-dns
     image: ghcr.io/staerk-ha-addons/technitium-dns/{arch}
