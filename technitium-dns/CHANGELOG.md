@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Enhance PKCS12 certificate generation logging and instructions for Technitium DNS Server configuration 
 - Remove deprecated custom regex configurations from Renovate JSON 
 - Add Renovate configuration for automated dependency management 
 - Update README and documentation for Technitium DNS Server add-on installation and support details 
