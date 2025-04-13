@@ -31,6 +31,26 @@ Technitium DNS Server is a cross-platform open source DNS server that can be use
 - Web interface for easy management
 - Integration with Home Assistant's SSL certificates
 
+## WARNING! THIS IS AN EDGE VERSION!
+
+This Home Assistant Add-ons repository contains edge builds of add-ons.
+Edge builds add-ons are based upon the latest development version.
+
+- They may not work at all.
+- They might stop working at any time.
+- They could have a negative impact on your system.
+
+This repository was created for:
+
+- Anybody willing to test.
+- Anybody interested in trying out upcoming add-ons or add-on features.
+- Developers.
+
+If you are more interested in stable releases of our add-ons:
+
+<https://github.com/staerk-ha-addons/repository>
+
+
 ## Installation
 
 1. Click the Home Assistant My button below to add the repository to your Home Assistant instance.
@@ -45,6 +65,7 @@ Technitium DNS Server is a cross-platform open source DNS server that can be use
 ### Default Credentials
 
 When accessing the web interface for the first time, use these credentials:
+
 - Username: `admin`
 - Password: `admin`
 
@@ -73,6 +94,7 @@ The original setup of this repository is by [Jeppe Stærk][staerk].
 ## Acknowledgments
 
 Special thanks to the [Home Assistant Community Add-ons][ha-addons] project for their invaluable work. This add-on heavily relies on their foundation:
+
 - Base container images
 - CI workflows and best practices
 
