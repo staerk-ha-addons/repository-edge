@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Refactor SSL certificate handling: improve configuration checks, ensure directory existence, and enhance logging for certificate generation and expiration warnings. 
 - Prettified Code! 
 - Enhance documentation and logging for SSL certificate management
 
