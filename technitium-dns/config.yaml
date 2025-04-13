@@ -1,6 +1,6 @@
 ---
 name: Technitium DNS Server
-version: a570de2
+version: 1671a14
 slug: technitium-dns
 description: Self-hosted DNS server with Home Assistant add-on integration.
 url: https://github.com/staerk-ha-addons/addon-technitium-dns
@@ -12,12 +12,10 @@ init: false
 arch:
   - amd64
   - aarch64
-# yamllint disable rule:truthy
 map:
   - type: ssl
   - type: addon_config
     read_only: false
-# yamllint enable rule:truthy
 options:
   generate_ssl_pfx: false
   ssl_pfx_password: "TechnitiumDNS!SSL"
