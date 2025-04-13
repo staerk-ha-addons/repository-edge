@@ -1,4 +1,7 @@
 # Changelog since v0.1.0
+- Prettified Code! 
+- Add VS Code tasks configuration for Home Assistant and addon management 
+- Update .gitignore: exclude VS Code tasks.json from being ignored 
 - Refactor certificate management: remove deprecated cert-convert startup and watch scripts, and add new certificate watch functionality. 
 - Prettified Code! 
 - Refactor Technitium DNS add-on: enhance certificate management, update AppArmor profile, and improve Dockerfile permissions 
