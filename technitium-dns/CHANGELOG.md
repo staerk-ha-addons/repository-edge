@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Add GitHub workflows for Lock, Release Drafter, and Stale with scheduled triggers 
 - Update workflow references to use hassio-addons for consistency and improve logging message in certificate watch script 
 - Prettified Code! 
 - Add VS Code tasks configuration for Home Assistant and addon management 
