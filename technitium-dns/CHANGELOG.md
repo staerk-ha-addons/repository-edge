@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Refactor AppArmor profile: enhance capabilities and permissions for S6 overlay scripts, DNS service, and certificate utilities. 
 - Refactor AppArmor profile: remove complain flag and enhance permissions for S6 overlay scripts and specific utilities. 
 - Enhance AppArmor profile: clarify S6 overlay scripts and services permissions. Update certificate utility logging for better clarity on self-signed certificate generation. 
 - Refactor SSL certificate generation scripts: restore and enhance the startup process for PKCS #12 certificate generation, ensuring proper logging and error handling. 
