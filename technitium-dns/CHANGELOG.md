@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Add Renovate configuration for automated dependency management 
 - Update README and documentation for Technitium DNS Server add-on installation and support details 
 - Add release drafter configuration for automated changelog generation 
 - Add GitHub workflows for Lock, Release Drafter, and Stale with scheduled triggers 
