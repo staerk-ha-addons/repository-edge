@@ -1,4 +1,7 @@
 # Changelog since v0.1.0
+- Refactor certificate management: remove deprecated cert-convert startup and watch scripts, and add new certificate watch functionality. 
+- Prettified Code! 
+- Refactor Technitium DNS add-on: enhance certificate management, update AppArmor profile, and improve Dockerfile permissions 
 - Refactor AppArmor profile: enhance capabilities and permissions for S6 overlay scripts, DNS service, and certificate utilities. 
 - Refactor AppArmor profile: remove complain flag and enhance permissions for S6 overlay scripts and specific utilities. 
 - Enhance AppArmor profile: clarify S6 overlay scripts and services permissions. Update certificate utility logging for better clarity on self-signed certificate generation. 
