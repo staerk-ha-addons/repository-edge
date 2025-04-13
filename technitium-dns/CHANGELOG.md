@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Update workflow references to use hassio-addons for consistency and improve logging message in certificate watch script 
 - Prettified Code! 
 - Add VS Code tasks configuration for Home Assistant and addon management 
 - Update .gitignore: exclude VS Code tasks.json from being ignored 
