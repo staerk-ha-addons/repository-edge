@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Update README and documentation for Technitium DNS Server add-on installation and support details 
 - Add release drafter configuration for automated changelog generation 
 - Add GitHub workflows for Lock, Release Drafter, and Stale with scheduled triggers 
 - Update workflow references to use hassio-addons for consistency and improve logging message in certificate watch script 
