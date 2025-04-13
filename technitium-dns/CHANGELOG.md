@@ -1,4 +1,10 @@
 # Changelog since v0.1.0
+- Prettified Code! 
+- Enhance documentation and logging for SSL certificate management
+
+- Updated DOCS.md to improve clarity on default credentials, configuration steps, and port settings.
+- Added structured notes for SSL certificate setup and DNS-over-HTTPS configuration.
+- Improved log messages in certificate conversion scripts for better visibility during startup and monitoring. 
 - Refactor DOCS.md to remove outdated sections and improve structure 
 - Remove CHANGELOG.md as it is no longer needed for the Technitium DNS Server add-on. 
 - Add README for Technitium DNS Server add-on with features, installation instructions, and support information 
