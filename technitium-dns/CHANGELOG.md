@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Update DNS_SERVER_VERSION and DNS_LIBRARY_VERSION in Dockerfile for consistency and clarity 
 - Refactor configuration files and improve formatting for Technitium DNS Server; enhance readability and maintainability. 
 - Refactor scripts and improve YAML translations for Technitium DNS Server; enhance readability and maintainability. 
 - Prettified Code! 
