@@ -1,5 +1,18 @@
 # 🏠 Home Assistant Add-on: Technitium DNS Server
 
+[![GitHub Release][releases-shield]][releases]
+![Project Stage][project-stage-shield]
+[![License][license-shield]](LICENSE.md)
+
+![Supports armhf Architecture][technitium-dns-armhf-shield]
+![Supports armv7 Architecture][technitium-dns-armv7-shield]
+![Supports aarch64 Architecture][technitium-dns-aarch64-shield]
+![Supports amd64 Architecture][technitium-dns-amd64-shield]
+![Supports i386 Architecture][technitium-dns-i386-shield]
+
+> [!TIP]
+> ⭐ Love this add-on? Show your support by giving us a star on GitHub! Every star helps make this project more visible and encourages continued development.
+
 ## WARNING! THIS IS AN EDGE VERSION!
 
 > [!CAUTION]
@@ -19,20 +32,6 @@ This repository was created for:
 If you are more interested in stable releases of our add-ons:
 
 <https://github.com/staerk-ha-addons/repository>
-
-
-[![GitHub Release][releases-shield]][releases]
-![Project Stage][project-stage-shield]
-[![License][license-shield]](LICENSE.md)
-
-![Supports armhf Architecture][technitium-dns-armhf-shield]
-![Supports armv7 Architecture][technitium-dns-armv7-shield]
-![Supports aarch64 Architecture][technitium-dns-aarch64-shield]
-![Supports amd64 Architecture][technitium-dns-amd64-shield]
-![Supports i386 Architecture][technitium-dns-i386-shield]
-
-> [!TIP]
-> ⭐ Love this add-on? Show your support by giving us a star on GitHub! Every star helps make this project more visible and encourages continued development.
 
 ## 🌐 Modern DNS Solution for Home Assistant
 
@@ -65,7 +64,7 @@ A fully featured DNS server for Home Assistant that acts as a secure forwarding 
   - IPv4 and IPv6 support
   - Encrypted connections
 
-## 📥 Installation
+## 🏃 Quick Start
 
 1. Click the Home Assistant My button below to add the repository to your Home Assistant instance.
 
@@ -85,20 +84,6 @@ A fully featured DNS server for Home Assistant that acts as a secure forwarding 
 >
 > You will be required to change the password on your first login for security purposes.
 
-## 🏃 Quick Start
-
-1. Add our repository to Home Assistant
-2. Install the add-on
-3. Start it
-4. Configure your router/devices to use it
-5. Enjoy secure DNS!
-
-> [!NOTE]
-> First login credentials:
->
-> - Username: `admin`
-> - Password: `admin`
-
 ## 📖 Documentation
 
 Want to get the most out of this add-on? Our comprehensive documentation covers:
@@ -110,7 +95,7 @@ Want to get the most out of this add-on? Our comprehensive documentation covers:
 - Troubleshooting
 - Client setup examples
 
-Check the [DOCS.md](DOCS.md) for full details.
+Check the [DOCS.md](https://github.com/staerk-ha-addons/addon-technitium-dns/blob/main/technitium-dns/DOCS.md) for full details.
 
 ## 🛠️ Development
 

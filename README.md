@@ -76,10 +76,10 @@ Their open-source contributions make add-ons like this possible.
 
 MIT License - Copyright (c) 2025 Jeppe Stærk
 
-[addon-technitium-dns]: https://github.com/staerk-ha-addons/addon-technitium-dns/tree/7e15d72
-[addon-doc-technitium-dns]: https://github.com/staerk-ha-addons/addon-technitium-dns/blob/7e15d72/README.md
+[addon-technitium-dns]: https://github.com/staerk-ha-addons/addon-technitium-dns/tree/7c0ebcd
+[addon-doc-technitium-dns]: https://github.com/staerk-ha-addons/addon-technitium-dns/blob/7c0ebcd/README.md
 [technitium-dns-issue]: https://github.com/staerk-ha-addons/addon-technitium-dns/issues
-[technitium-dns-version-shield]: https://img.shields.io/badge/version-7e15d72-blue.svg
+[technitium-dns-version-shield]: https://img.shields.io/badge/version-7c0ebcd-blue.svg
 [technitium-dns-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [technitium-dns-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [technitium-dns-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg

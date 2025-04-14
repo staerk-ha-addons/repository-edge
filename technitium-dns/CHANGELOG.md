@@ -1,4 +1,6 @@
 # Changelog since v0.1.0
+- refactor: Clean up README files by removing duplicates and enhancing clarity 
+- refactor: Update README files to enhance clarity and consistency; change 'Installation' to 'Quick Start' 
 - Prettified Code! 
 - feat: Add manual configuration and certificate handling options
 
