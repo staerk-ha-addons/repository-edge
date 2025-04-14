@@ -1,5 +1,5 @@
 name: Technitium DNS Server
-version: ea5383e
+version: 7e15d72
 slug: technitium-dns
 description: Self-hosted DNS server with Home Assistant add-on integration.
 url: https://github.com/staerk-ha-addons/addon-technitium-dns
@@ -20,9 +20,11 @@ options:
   logQueries: true
   enableDnsOverTls: true
   enableDnsOverHttps: true
-  enableDnsOverQuic: true
+  enableDnsOverQuic: false
   certfile: /ssl/fullchain.pem
   keyfile: /ssl/privkey.key
+  manualConfig: false
+  manualCertHandling: false
 schema:
   forwarders: "list(\n  Cloudflare (DNS-over-UDP)|\n  Cloudflare (DNS-over-UDP IPv6)|\n\
     \  Cloudflare (DNS-over-TCP)|\n  Cloudflare (DNS-over-TCP IPv6)|\n  Cloudflare\
@@ -35,6 +37,8 @@ schema:
   enableDnsOverQuic: bool
   keyfile: str?
   certfile: str?
+  manualConfig: bool
+  manualCertHandling: bool
 ports:
   53/udp: 53
   443/tcp: 443

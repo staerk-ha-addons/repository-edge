@@ -1,148 +1,343 @@
-# Home Assistant Add-on: Technitium DNS Server
+# 🏠 Home Assistant Add-on: Technitium DNS Server
 
-## Configuration
+## 📝 TL;DR
+
+Quick setup and best practices:
+
+### DNS Server Setup
+
+- Use this add-on as your primary DNS server
+- Configure your router DNS to use `homeassistant.local` (or HA IP)
+- All ports (53, 443, 853) enabled by default
+- Self-signed certificates generated automatically
+
+### Secure DNS
+
+- Use encrypted forwarding (DoH/DoT/DoQ) to Cloudflare
+- Standard endpoints:
+  - DNS: `homeassistant.local` or `<Home Assistant IP>`
+  - DoH: `https://homeassistant.local/dns-query`
+  - DoT: `tls://homeassistant.local:853`
+  - DoQ: `quic://homeassistant.local:853`
+
+### Local DNS Zone
+
+```plaintext
+# Quick zone setup
+1. Access via the Web UI
+2. Add zone: home.lab
+3. Add records:
+   nas.home.lab.     A     192.168.1.10
+   printer.home.lab  A     192.168.1.20
+```
+
+## 🔧 Configuration
+
+### 🎯 Best Practices
+
+This add-on is designed to be your primary DNS server, acting as a secure forwarding DNS server that queries external DNS providers using encrypted protocols (DoH, DoT, or DoQ).
+
+Recommended setup:
+
+1. Configure your router to use this DNS server (typically `homeassistant.local` or the IP of your Home Assistant)
+2. Or configure individual devices to use this DNS server
+3. Use encrypted forwarding (DoH, DoT, or DoQ) to upstream DNS providers
+4. Keep query logging enabled for troubleshooting
+5. Optionally, set up local DNS zones for your home lab (e.g., `home.lab`, `internal`)
+
+> [!TIP]
+> By using this add-on as your DNS server, you get:
+>
+> - Encrypted DNS queries to external providers
+> - Local DNS resolution for your network
+> - Query logging for troubleshooting
+> - Ability to block unwanted domains
+> - Faster response times through caching
+> - Custom domain names for local devices
+> - Service discovery through DNS records
 
 ### Add-on Configuration
 
 The add-on can be configured via the Home Assistant frontend:
 
-1. Navigate to Settings → Add-ons → Technitium DNS Server.
-2. Click the "Configuration" tab.
-3. Update the configuration as needed.
-4. Click "Save" to apply changes.
-5. Restart the add-on for the changes to take effect.
+1. Navigate to Settings → Add-ons → Technitium DNS Server
+2. Click the "Configuration" tab
+3. Update the configuration as needed
+4. Click "Save" to apply changes
+5. Restart the add-on for the changes to take effect
 
-### Port Configuration
+### 🤖 Automatic Server Configuration
+
+The add-on automatically configures Technitium DNS Server on startup using its API. This includes:
+
+- DNS protocol settings (DoH, DoT, DoQ)
+- SSL certificate paths and configurations
+- DNS forwarder settings
+- Query logging preferences
+- Port configurations
+- Web interface settings
 
 > [!NOTE]
-> By default, only port 53/UDP is enabled.
+> Any manual changes made in the Technitium DNS Server web interface may be overwritten on add-on restart.
 
-The add-on provides the following ports:
+### 🔌 Port Configuration
 
 | Port | Protocol | Description                        |
 | ---- | -------- | ---------------------------------- |
 | 53   | UDP      | Standard DNS service               |
-| 853  | UDP      | DNS-over-QUIC                      |
 | 853  | TCP      | DNS-over-TLS                       |
-| 443  | UDP      | DNS-over-HTTPS (HTTP/3)            |
+| 853  | UDP      | DNS-over-QUIC                      |
 | 443  | TCP      | DNS-over-HTTPS (HTTP/1.1 + HTTP/2) |
+| 443  | UDP      | DNS-over-HTTPS (HTTP/3)            |
 
-To enable additional ports or change port mappings:
+To change port mappings:
 
-1. Go to the add-on configuration page in Home Assistant.
-2. Scroll down to the "Network" section.
-3. Click "Show disabled ports."
-4. Enable the desired ports by clicking the toggle switch.
-5. To use a different port number:
-   - Click on the port number.
-   - Enter your desired port number (e.g., change `853` to `8853` to run DNS-over-TLS on port 8853).
-6. Click "Save" to apply changes.
+1. Go to the add-on configuration page
+2. Scroll to "Network" section
+3. Click the port number you want to change
+4. Enter new port number (e.g., `8853` for DNS-over-TLS)
+5. Click "Save"
+
+> [!NOTE]
+> All ports are enabled by default. You only need to change ports if you have conflicts with other services.
+
+### 🔒 SSL Certificate Setup
+
+The add-on supports three certificate options for secure DNS protocols (DoH, DoT, and DoQ):
+
+#### Option 1: Self-Signed Certificates (Default)
+
+If no certificates are specified, the add-on automatically:
+
+1. Generates self-signed certificates
+2. Creates PKCS#12 file for Technitium DNS
+3. Configures all necessary paths
+
+> [!NOTE]
+> Self-signed certificates are perfect for testing but may trigger security warnings in browsers and clients.
+
+#### Option 2: Let's Encrypt Integration (Recommended for Production)
+
+For secure remote access, Home Assistant recommends using Let's Encrypt certificates.
+
+##### Duck DNS Add-on with Let's Encrypt
+
+- Free alternative
+- Requires manual setup
+- [Duck DNS Add-on documentation][duckdns-link]
 
 > [!IMPORTANT]
-> After enabling or changing ports, you'll also need to configure the corresponding services (DoH, DoT, DoQ) in the Technitium DNS web interface.
+> For detailed information about securing remote access, see the [Home Assistant Security Documentation][security-link].
 
-The web interface is available via Ingress in your Home Assistant frontend.
+#### Option 3: Custom Certificates
 
-### SSL Certificate Setup
+You can use your own certificates by:
 
-> [!WARNING]
-> If you're only using standard DNS or other protocols, you can skip this section.
+1. Placing them in the `/ssl` directory
+2. Update path in configuration
+3. Restart this add-on
+
+> [!TIP]
+> Regardless of the option chosen, the add-on handles:
 >
-> This section covers advanced setup for DNS-over-HTTPS (DoH), DNS-over-TLS (DoT) and DNS-over-QUIC (DoQ). Only proceed if you're comfortable with SSL certificates and DNS configuration.
+> - PKCS#12 conversion
+> - File permissions
+> - Certificate monitoring
+> - Service restarts
+
+### 🌐 DNS Protocol Configuration
+
+#### DNS-over-HTTPS (DoH)
+
+1. Default ports:
+
+   - 443/TCP for HTTP/1.1 + HTTP/2
+   - 443/UDP for HTTP/3
+
+2. Endpoint URLs:
+   - Standard: `https://homeassistant.local:443/dns-query`
+   - Custom domain: `https://your-domain:443/dns-query`
+   - Custom port: `https://homeassistant.local:port/dns-query`
+
+Example client configurations:
+
+```bash
+# Chrome/Brave/Edge browsers
+chrome://settings/security → Use secure DNS → Custom → Enter DoH URL:
+https://homeassistant.local/dns-query
+
+# Firefox
+Settings → Network Settings → Enable DNS over HTTPS → Custom:
+https://homeassistant.local/dns-query
+
+# iOS/macOS
+Settings → Wi-Fi → DNS → Configure DNS:
+https://homeassistant.local/dns-query
+
+# Android 9+
+Settings → Network & Internet → Private DNS → Enter hostname:
+homeassistant.local
+
+# Windows 11
+Settings → Network & Internet → Wi-Fi/Ethernet → Hardware Properties → DNS:
+https://homeassistant.local/dns-query
+
+# Ubuntu/Debian (systemd-resolved)
+sudo tee /etc/systemd/resolved.conf << EOF
+[Resolve]
+DNS=homeassistant.local
+DNSOverTLS=yes
+EOF
+sudo systemctl restart systemd-resolved
+
+# Pi-hole
+Settings → DNS → Upstream DNS Servers → Add Custom:
+tls://homeassistant.local:853
+
+# OPNsense/pfSense
+System → Settings → General → DNS Server Settings:
+https://homeassistant.local/dns-query
+
+# AdGuard Home
+Settings → DNS Settings → Upstream DNS Servers:
+quic://homeassistant.local:853
+```
+
+#### DNS-over-TLS (DoT)
+
+1. Default port: 853/TCP
+
+2. Endpoint format:
+   - Standard: `tls://homeassistant.local:853`
+   - Custom domain: `tls://your-domain:853`
+   - Custom port: `tls://homeassistant.local:port`
+
+#### DNS-over-QUIC (DoQ)
+
+1. Default port: 853/UDP
+
+2. Endpoint format:
+   - Standard: `quic://homeassistant.local:853`
+   - Custom domain: `quic://your-domain:853`
+   - Custom port: `quic://homeassistant.local:port`
+
+> [!TIP]
+> Test your DNS endpoints:
 >
-> If you plan to use DNS-over-HTTPS (DoH), DNS-over-TLS (DoT) and/or DNS-over-QUIC (DoQ), ensure that port 443 and/or 853 is not already in use by Home Assistant or other services. Home Assistant typically uses port 443 for its own HTTPS access, so you may need to:
+> ```bash
+> # Test DoH
+> curl -H 'accept: application/dns-json' \
+>   'https://homeassistant.local/dns-query?name=example.com&type=A'
 >
-> - Run on a different port see: [Port Configuration](#port-configuration)
-> - Configure a reverse proxy to handle the routing
+> # Test DoT
+> kdig @853 example.com +tls-host=homeassistant.local
+>
+> # Test DoQ
+> dog example.com @quic://homeassistant.local:853
+> ```
 
-To set up SSL certificates using the Home Assistant Let's Encrypt add-on:
+The add-on automatically configures all enabled protocols based on your settings. No manual configuration in the Technitium web interface is required.
 
-1. Install the Let's Encrypt add-on from the official add-on store.
-2. Open the Let's Encrypt add-on configuration page.
-3. Click the "Configuration" tab.
-4. Configure the following settings:
-   - **Domain:** Enter your domain (e.g., `your.domain.com`)
-   - **Email:** Enter your email address for certificate notifications
-   - **Certificate File:** Leave as default (`fullchain.pem`)
-   - **Private Key File:** Leave as default (`privkey.pem`)
-5. Select your preferred challenge type:
-   - **DNS challenge:** If you're using a DNS provider (like Cloudflare)
-6. Click "Save" to apply the configuration.
-7. Start the Let's Encrypt add-on.
-8. Check the add-on logs to confirm certificate generation.
+### 🏠 Local DNS Zones
 
-Once the certificates are generated, you have two options to use them with Technitium DNS:
+Technitium DNS Server can host your own DNS zones for your home lab environment.
 
-#### Automatic PKCS #12 Certificate Generation (Recommended)
+#### Setting up a Local Zone
 
-1. Go to the Technitium DNS Server add-on configuration.
-2. Enable `generate_ssl_pfx` by setting it to `true`.
-3. Set a secure `ssl_pfx_password` (recommended).
-4. (Optional) Override certificate paths if needed:
-   - **certfile:** Path to your full chain certificate (default: `/ssl/fullchain.pem`)
-   - **keyfile:** Path to your private key (default: `/ssl/privkey.pem`)
-   - **pkcs12file:** Output path for generated PKCS #12 certificate (default: `/config/ssl/technitium.pfx`)
-5. Save the configuration and restart the add-on.
-6. The PKCS #12 certificate will be automatically generated at the configured `pkcs12file` location.
+1. Access the web interface at `http://homeassistant.local:5380`
+2. Navigate to Zones → Add Zone
+3. Enter your desired domain (e.g., `home.lab`, `local.network`)
+4. Click "Add"
 
-This add-on includes built-in automatic management of your TLS/SSL certificate used by Technitium DNS Server.
+Example records for your home lab:
 
-When enabled, the add-on will:
+```plaintext
+# A Records (IPv4)
+server1.home.lab.    A    192.168.1.10
+nas.home.lab.        A    192.168.1.20
+printer.home.lab.    A    192.168.1.30
 
-- Automatically generate a PKCS #12 certificate (`.pfx` file) from your configured `certfile` and `keyfile` (usually provided by the Home Assistant Let's Encrypt add-on).
-- Monitor the certificate files for changes.
-- Automatically regenerate the `.pfx` file when certificates are renewed or about to expire.
-- Automatically restart Technitium DNS Server to ensure it loads the updated certificate without manual intervention.
+# CNAME Records (Aliases)
+www.home.lab.        CNAME    server1.home.lab.
+files.home.lab.      CNAME    nas.home.lab.
 
-This ensures Technitium DNS Server always uses the latest valid certificate with no manual steps required after initial configuration.
+# TXT Records (Service Information)
+home.lab.            TXT    "v=spf1 ip4:192.168.1.0/24 -all"
+_service.home.lab.   TXT    "location=basement rack=1"
+```
 
-#### Manual Certificate Setup
+#### Advanced Configuration
 
-If you prefer to manage certificates manually, you can convert the Let's Encrypt certificates yourself and place them in the appropriate location.
+1. **Reverse DNS Zone**
 
-### Configuring DNS-over-HTTPS
+   ```plaintext
+   # Create reverse zone for 192.168.1.0/24
+   Zone name: 1.168.192.in-addr.arpa
 
-After generating the PKCS #12 certificate, follow these steps to configure DNS-over-HTTPS:
+   # PTR Records
+   10    PTR    server1.home.lab.
+   20    PTR    nas.home.lab.
+   30    PTR    printer.home.lab.
+   ```
 
-1. Enable the HTTPS port in the add-on:
+2. **Split DNS**
 
-   - Go to the add-on's configuration page.
-   - Scroll down to the "Network" section.
-   - Click "Show disabled ports."
-   - Enable port 443 (both TCP and UDP).
-   - Click "Save."
-   - Restart the add-on.
+   - Create different views for internal/external access
+   - Navigate to DNS Server → Settings → Advanced
+   - Add networks under "Allow Recursion Networks"
 
-2. Configure the web service settings in Technitium DNS Server:
+3. **Dynamic DNS Updates**
 
-   - Go to Settings → Web Service.
-   - Under "HTTPS Options":
-     - Enable HTTPS.
-     - Enable HTTP/3 (optional).
-     - ⚠️ **Do NOT enable** "HTTP to HTTPS Redirect" as it will break the Home Assistant ingress functionality.
-   - Set "TLS Certificate File Path" to the value of `pkcs12file` (default: `/config/ssl/technitium.pfx`).
-   - Enter your certificate password in "TLS Certificate Password."
-   - Click "Save" to apply changes.
+   ```bash
+   # Update record using curl
+   curl -X POST "http://homeassistant.local:5380/api/zones/updateRecord" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "token": "your-api-token",
+       "domain": "device.home.lab",
+       "type": "A",
+       "value": "192.168.1.100"
+     }'
+   ```
 
-3. Enable DNS-over-HTTPS in Settings → Optional Protocols:
-   - Enable DNS over HTTPS (DoH).
-   - Click "Save."
+> [!TIP]
+> Best practices for local zones:
+>
+> - Use a dedicated domain suffix (e.g., `.home.lab`, `.internal`)
+> - Document all DNS records
+> - Use meaningful naming conventions
+> - Set appropriate TTL values
+> - Regular backups of zone files
 
-Your DNS-over-HTTPS service should now be ready to use. The default ports are:
+## 🔍 Troubleshooting
 
-- **DNS-over-HTTPS:** 443 (TCP/UDP)
+### Common Issues
 
-Note: The DoH endpoint will be available at `https://your.domain.com/dns-query`.
+1. **Certificate Issues**
 
-## Support
+   - Check certificate paths are correct
+   - Verify certificate permissions
+   - Check logs for certificate conversion errors
 
-Got questions? You have several options to get them answered:
+2. **Port Conflicts**
 
-- The [Home Assistant Discord Chat Server][discord].
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit].
+   - Ensure no other services use ports 53, 443, or 853
+   - Try alternative ports if needed
+   - Check firewall settings
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+3. **DNS Resolution Problems**
+   - Verify forwarder settings
+   - Check DNS server logs
+   - Test with `dig` or `nslookup`
+
+## 🆘 Support
+
+Need help? Try these channels:
+
+- [Home Assistant Discord][discord]
+- [Community Forum][forum]
+- [Reddit r/homeassistant][reddit]
+- [GitHub Issues][issue]
 
 ## Contributing
 
@@ -175,3 +370,5 @@ Copyright (c) 2025 Jeppe Stærk
 [reddit]: https://reddit.com/r/homeassistant
 [staerk]: https://github.com/staerk-ha-addons
 [ha-addons]: https://addons.community/
+[duckdns-link]: https://github.com/home-assistant/addons/tree/master/duckdns
+[security-link]: https://www.home-assistant.io/docs/configuration/securing/#remote-access

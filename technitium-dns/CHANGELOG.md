@@ -1,4 +1,13 @@
 # Changelog since v0.1.0
+- Prettified Code! 
+- feat: Add manual configuration and certificate handling options
+
+- Updated config.yaml to include manualConfig and manualCertHandling options.
+- Modified cert-watch script to disable automatic certificate management if manualCertHandling is enabled.
+- Enhanced init-dns-server script to skip automatic configuration if manualConfig is enabled.
+- Updated translations to include descriptions for new configuration options.
+- Added comprehensive documentation for the Technitium DNS Server add-on, covering installation, configuration, and troubleshooting.
+- Introduced README and DOCS files for better user guidance and support. 
 - Update DNS_SERVER_VERSION and DNS_LIBRARY_VERSION in Dockerfile for consistency and clarity 
 - Refactor configuration files and improve formatting for Technitium DNS Server; enhance readability and maintainability. 
 - Refactor scripts and improve YAML translations for Technitium DNS Server; enhance readability and maintainability. 
