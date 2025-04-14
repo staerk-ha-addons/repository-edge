@@ -1,4 +1,16 @@
 # Changelog since v0.1.0
+- Refactor scripts and improve YAML translations for Technitium DNS Server; enhance readability and maintainability. 
+- Prettified Code! 
+- Enhance Technitium DNS Server with new features and improvements
+
+- Updated AppArmor profiles to include new scripts for API utilities, initialization, and certificate watching.
+- Modified configuration file to support additional DNS forwarding options and logging capabilities.
+- Improved certificate management script to handle self-signed certificates and PKCS12 generation more robustly.
+- Added new API utilities for better interaction with the Technitium DNS Server.
+- Implemented a certificate watch script with debouncing to reduce unnecessary updates.
+- Created initialization script for the DNS server to validate configuration and set up necessary parameters.
+- Added translations for new configuration options in English.
+- Introduced new service dependencies and run scripts for better service management. 
 - Refactor AppArmor profile and configuration for Technitium DNS Server; remove unused signal handling and adjust port settings for improved functionality. 
 - Remove unused cert-convert-startup dependency script 
 - Enhance PKCS12 certificate generation logging and instructions for Technitium DNS Server configuration 
