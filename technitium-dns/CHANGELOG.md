@@ -1,4 +1,5 @@
 # Changelog since v0.1.0
+- Refactor configuration files and improve formatting for Technitium DNS Server; enhance readability and maintainability. 
 - Refactor scripts and improve YAML translations for Technitium DNS Server; enhance readability and maintainability. 
 - Prettified Code! 
 - Enhance Technitium DNS Server with new features and improvements

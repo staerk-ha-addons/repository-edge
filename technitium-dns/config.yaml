@@ -1,5 +1,5 @@
 name: Technitium DNS Server
-version: 6aa79c6
+version: 39fd9ed
 slug: technitium-dns
 description: Self-hosted DNS server with Home Assistant add-on integration.
 url: https://github.com/staerk-ha-addons/addon-technitium-dns
@@ -24,11 +24,11 @@ options:
   certfile: /ssl/fullchain.pem
   keyfile: /ssl/privkey.key
 schema:
-  forwarders: list(Cloudflare (DNS-over-UDP)|Cloudflare (DNS-over-UDP IPv6)|Cloudflare
-    (DNS-over-TCP)|Cloudflare (DNS-over-TCP IPv6)|Cloudflare (DNS-over-TLS)|Cloudflare
-    (DNS-over-TLS IPv6)|Cloudflare (DNS-over-HTTPS)|Cloudflare (DNS-over-HTTPS IPv6)|Cloudflare
-    (Oblivious DNS-over-HTTPS)|Cloudflare (Oblivious DNS-over-HTTPS IPv6)|Cloudflare
-    (DNS-over-QUIC)|Cloudflare (DNS-over-QUIC IPv6)|Cloudflare (DNS-over-TOR!))
+  forwarders: "list(\n  Cloudflare (DNS-over-UDP)|\n  Cloudflare (DNS-over-UDP IPv6)|\n\
+    \  Cloudflare (DNS-over-TCP)|\n  Cloudflare (DNS-over-TCP IPv6)|\n  Cloudflare\
+    \ (DNS-over-TLS)|\n  Cloudflare (DNS-over-TLS IPv6)|\n  Cloudflare (DNS-over-HTTPS)|\n\
+    \  Cloudflare (DNS-over-HTTPS IPv6)|\n  Cloudflare (Oblivious DNS-over-HTTPS)|\n\
+    \  Cloudflare (Oblivious DNS-over-HTTPS IPv6)\n)"
   logQueries: bool
   enableDnsOverTls: bool
   enableDnsOverHttps: bool
