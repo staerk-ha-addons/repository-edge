@@ -1,3 +1,11 @@
 # Changelog since v0.2.3
+- Prettified Code! 
+- feat: Add dev_bootstrap script and enhance DNS server configuration options
+
+- Introduced a new script for setting up the development environment.
+- Updated Dockerfile to ensure proper script permissions.
+- Enhanced config.yaml with additional DNS-over-HTTPS3 and logging options.
+- Improved logging levels in various scripts for better debugging.
+- Updated translations to reflect new configuration options. 
 - chore: Update DNS endpoint format in documentation for clarity 
 - chore: Update documentation and Dockerfile for Technitium DNS Server add-on 
