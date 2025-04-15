@@ -1,4 +1,5 @@
 # Changelog since v0.2.3
+- refactor: Update DNS flow diagram and clarify supported protocols in documentation 
 - Prettified Code! 
 - refactor: Update VSCode tasks for improved logging and remove AppArmor configuration 
 - refactor: Remove strict error handling and improve logging in DNS server scripts 
