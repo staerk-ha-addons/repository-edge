@@ -1,4 +1,6 @@
 # Changelog since v0.2.3
+- Prettified Code! 
+- refactor: Update VSCode tasks for improved logging and remove AppArmor configuration 
 - refactor: Remove strict error handling and improve logging in DNS server scripts 
 - style: Standardize quotes in configuration and workflow files 
 - refactor: Remove .prettierrc and enhance error handling in DNS server scripts 
