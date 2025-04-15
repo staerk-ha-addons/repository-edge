@@ -1,4 +1,5 @@
 # Changelog since v0.2.3
+- refactor: Update documentation and configuration for hostname handling and logging options 
 - refactor: Add helper utilities sourcing in DNS server initialization scripts 
 - Prettified Code! 
 - refactor: Enhance DNS server task management and add helper utilities for improved functionality 
