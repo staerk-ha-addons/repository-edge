@@ -1,4 +1,5 @@
 # Changelog since v0.2.3
+- Refactor code structure for improved readability and maintainability 
 - DNS flowchart updated 
 - refactor: Update DNS flow diagram and clarify supported protocols in documentation 
 - Prettified Code! 
