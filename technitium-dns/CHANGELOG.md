@@ -1,4 +1,5 @@
 # Changelog since v0.2.3
+- refactor: Remove strict error handling and improve logging in DNS server scripts 
 - style: Standardize quotes in configuration and workflow files 
 - refactor: Remove .prettierrc and enhance error handling in DNS server scripts 
 - Prettified Code! 
