@@ -1,4 +1,6 @@
 # Changelog since v0.2.3
+- refactor: Clean up YAML formatting and improve readability in cleanup workflow 
+- refactor: Enhance certificate monitoring logic and implement cleanup workflow for untagged packages 
 - refactor: Improve certificate generation logic to check for PKCS12 existence before hostname validation 
 - Refactor Technitium DNS Server initialization and configuration scripts
 
