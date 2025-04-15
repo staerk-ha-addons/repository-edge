@@ -1,4 +1,6 @@
 # Changelog since v0.2.3
+- style: Standardize quotes in configuration and workflow files 
+- refactor: Remove .prettierrc and enhance error handling in DNS server scripts 
 - Prettified Code! 
 - feat: Add dev_bootstrap script and enhance DNS server configuration options
 
