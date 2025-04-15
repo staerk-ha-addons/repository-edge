@@ -1,4 +1,7 @@
 # Changelog since v0.2.3
+- Prettified Code! 
+- refactor: Improve logging and error handling in DNS server startup script 
+- refactor: Update DNS flowchart and configuration for improved clarity and completeness 
 - Refactor code structure for improved readability and maintainability 
 - DNS flowchart updated 
 - refactor: Update DNS flow diagram and clarify supported protocols in documentation 

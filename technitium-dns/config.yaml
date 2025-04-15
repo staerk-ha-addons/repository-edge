@@ -1,5 +1,5 @@
 name: Technitium DNS Server
-version: a933cf5
+version: a959a3d
 slug: technitium-dns
 description: Self-hosted DNS server with Home Assistant add-on integration.
 url: https://github.com/staerk-ha-addons/addon-technitium-dns
@@ -41,6 +41,7 @@ schema:
   manualCertHandling: bool
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
 ports:
+  53/tcp: 53
   53/udp: 53
   443/tcp: 443
   443/udp: 443
