@@ -1,4 +1,5 @@
 # Changelog since v0.2.3
+- refactor: Improve certificate generation logic to check for PKCS12 existence before hostname validation 
 - Refactor Technitium DNS Server initialization and configuration scripts
 
 - Improved initialization process by adding a delay for DNS server startup.
