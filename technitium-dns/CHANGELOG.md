@@ -1,4 +1,15 @@
 # Changelog since v0.2.3
+- Refactor Technitium DNS Server initialization and configuration scripts
+
+- Improved initialization process by adding a delay for DNS server startup.
+- Enhanced manual configuration check to skip automatic setup if enabled.
+- Streamlined source dependency checks and added error handling for sourcing scripts.
+- Removed redundant validation for configuration values and improved logging.
+- Consolidated forwarder configuration logic into a dedicated function for better maintainability.
+- Updated API call handling to include token management and improved error handling.
+- Enhanced certificate management with hostname validation and improved logging.
+- Added support for additional DNS forwarders and improved configuration handling.
+- Refactored helper utilities for better readability and maintainability. 
 - refactor: Update documentation and configuration for hostname handling and logging options 
 - refactor: Add helper utilities sourcing in DNS server initialization scripts 
 - Prettified Code! 
