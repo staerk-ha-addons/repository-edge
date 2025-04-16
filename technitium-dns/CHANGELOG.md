@@ -1,4 +1,12 @@
 # Changelog since v0.2.3
+- refactor: Standardize log prefixes in API and certificate utility scripts 
+- Enhance logging and debugging for Technitium DNS Server initialization
+
+- Updated logging statements in various scripts to include a prefix indicating the source of the log (e.g., "init-env", "api utils", "cert utils", "config utils").
+- Added conditional debug logging based on the DEBUG environment variable.
+- Removed the deprecated init_dns-server.sh script and integrated its functionality into existing scripts.
+- Improved clarity of log messages to better indicate the status of operations, such as certificate checks and API calls.
+- Ensured that all required environment variables are checked and logged appropriately. 
 - refactor: Rename hostname variable to domain for consistency across scripts 
 - Prettified Code! 
 - refactor: Improve task dependencies formatting and remove unused script 
