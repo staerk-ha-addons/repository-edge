@@ -1,4 +1,25 @@
 # Changelog since v0.2.3
+- refactor: Update Dockerfile stages and streamline environment initialization script 
+- Refactor certificate management and helper utilities
+
+- Updated cert_utils.sh to streamline certificate validation and generation processes.
+- Added environment variable checks for required certificate paths.
+- Improved logging for certificate status and errors.
+- Introduced config_utils.sh for managing configuration-related utilities, including hostname retrieval and DNS forwarder configuration.
+- Removed deprecated helper_utils.sh to consolidate functionality into config_utils.sh. 
+- refactor: Enhance Dockerfile structure and optimize build process for technitium-dns 
+- refactor: Update package deletion parameters for technitium-dns cleanup workflow 
+- refactor: Remove duplicate steps for deleting old package versions in cleanup workflow for technitium-dns 
+- refactor: Remove redundant steps for deleting old package versions in cleanup workflow for technitium-dns 
+- refactor: Consolidate cleanup steps for technitium-dns by standardizing package deletion parameters 
+- refactor: Simplify cleanup workflow by removing redundant package deletion steps for technitium-dns 
+- refactor: Standardize package deletion steps in cleanup workflow for technitium-dns 
+- refactor: Update package name formatting for technitium-dns in cleanup workflow 
+- refactor: Update cleanup workflow to standardize package deletion steps and use correct token 
+- refactor: Update package permissions to admin for cleanup job 
+- refactor: Remove redundant owner and token fields in cleanup workflow 
+- refactor: Update cleanup workflow to enhance clarity and maintainability 
+- refactor: Rename workflow to clarify purpose and streamline cleanup steps for old packages 
 - refactor: Update port configuration to use null values and enhance certificate handling during DNS server initialization 
 - refactor: Clean up YAML formatting and improve readability in cleanup workflow 
 - refactor: Enhance certificate monitoring logic and implement cleanup workflow for untagged packages 
