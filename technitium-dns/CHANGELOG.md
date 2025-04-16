@@ -1,4 +1,5 @@
 # Changelog since v0.2.3
+- refactor: Simplify write_env function and remove unused certificate validation logic 
 - refactor: Remove unused variables and improve logging redaction in API utilities
 fix: Update descriptions in translation files for clarity 
 - refactor: Rename hostname variable to domain for consistency in environment variable checks 
