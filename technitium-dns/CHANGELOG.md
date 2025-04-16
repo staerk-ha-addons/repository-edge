@@ -1,4 +1,19 @@
 # Changelog since v0.2.3
+- refactor: Rename hostname variable to domain for consistency across scripts 
+- Prettified Code! 
+- refactor: Improve task dependencies formatting and remove unused script 
+- Prettified Code! 
+- Refactor Technitium DNS Addon
+
+- Updated tasks.json for better readability and added a new task to fix S6-Overlay files.
+- Added net-tools package to the Dockerfile for enhanced networking capabilities.
+- Modified config.yaml to include apparmor and log_level settings.
+- Removed unnecessary dependency files for cert-watch and dns-server services.
+- Enhanced run scripts for cert-watch and dns-server to improve logging and error handling.
+- Added a new script (s6-overlay-fix.sh) to comprehensively fix S6-Overlay v3 issues.
+- Updated permissions and ensured correct shebang lines in various scripts.
+- Improved API token management with retry logic in api_utils.sh.
+- Cleaned up environment variable setup in init-env script. 
 - refactor: Update Dockerfile stages and streamline environment initialization script 
 - Refactor certificate management and helper utilities
 
