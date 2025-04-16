@@ -1,4 +1,5 @@
 # Changelog since v0.2.3
+- refactor: Rename hostname variable to domain for consistency in environment variable checks 
 - refactor: Standardize log prefixes in API and certificate utility scripts 
 - Enhance logging and debugging for Technitium DNS Server initialization
 
