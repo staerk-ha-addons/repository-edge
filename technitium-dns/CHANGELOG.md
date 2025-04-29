@@ -1,1 +1,1 @@
-- Prettified Code!
+- feat: Update DNS server run script for improved logging and first run configuration
