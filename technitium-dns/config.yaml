@@ -1,5 +1,5 @@
 name: Technitium DNS Server
-version: c8f0e9c
+version: 0f8c162
 slug: technitium-dns
 description: Self-hosted DNS server with Home Assistant add-on integration.
 url: https://github.com/staerk-ha-addons/addon-technitium-dns
