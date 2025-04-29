@@ -1,1 +1,2 @@
-- feat: Update DNS server run script for improved logging and first run configuration
+# Changelog since v0.0.2
+- feat: Update Dependabot schedule to daily at 21:20 for GitHub Actions 
