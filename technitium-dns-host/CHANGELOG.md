@@ -1,0 +1,1 @@
+- Merge branch 'staerk-ha-addons:main' into main

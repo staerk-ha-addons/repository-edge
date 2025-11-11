@@ -1,0 +1,135 @@
+# 🏠 Home Assistant Add-on: Technitium DNS Server (Host Network)
+
+[![GitHub Release][releases-shield]][releases]
+![Project Stage][project-stage-shield]
+[![License][license-shield]](LICENSE)
+
+> [!CAUTION]
+> WARNING! THIS IS AN EDGE VERSION!
+>
+> This Home Assistant Add-ons repository contains edge builds of add-ons.
+> Edge builds add-ons are based upon the latest development version.
+>
+> - They may not work at all.
+> - They might stop working at any time.
+> - They could have a negative impact on your system.
+
+> [!TIP]
+> ⭐ Love this add-on? Show your support by giving a [star on GitHub!][repository] Every star helps make this project more visible and encourages continued development.
+
+> [!IMPORTANT]
+> This is the **Host Network** variant of the Technitium DNS Server add-on. It runs with `host_network: true`, which means:
+> - The add-on shares the host's network stack directly
+> - DNS server is accessible on port 53 without port mapping
+> - Better performance and compatibility in some network configurations
+> - **Note**: Only install this variant if you specifically need host network mode
+>
+> For the standard version (without host network), see [addon-technitium-dns](https://github.com/staerk-ha-addons/addon-technitium-dns)
+
+## 🌐 Modern DNS Solution for Home Assistant
+
+A fully featured DNS server for Home Assistant that acts as a secure forwarding DNS server, querying external providers using modern encrypted protocols. Perfect for improving your home network's privacy and security.
+
+## ✨ Features
+
+A fully featured DNS server for Home Assistant that:
+
+- 🔒 Securely forwards DNS queries using DoH/DoT/DoQ
+- 🌐 Supports local DNS zones and custom domains
+- ⚡ Provides fast DNS caching
+- 🛡️ Includes DNS filtering and blocking
+
+## 🏃 Quick Start
+
+1. Click the Home Assistant My button below to add the repository to your Home Assistant instance.
+
+   [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fstaerk-ha-addons%2Frepository)
+
+2. Find the "Technitium DNS Server (Host Network)" add-on in the add-on store.
+3. Click "Install" to download the add-on.
+4. Click "Start" to start the add-on.
+5. Check the logs of the add-on to see if everything went well.
+6. Click "Open Web Ui" and login.
+
+> [!NOTE]
+> When accessing the web interface for the first time:
+>
+> - **Username:** `admin`
+> - **Password:** `admin`
+>
+> You will be required to change the password on your first login for security purposes.
+
+## 📖 Documentation
+
+Want to get the most out of this add-on? Our comprehensive documentation covers:
+
+- Detailed setup guides
+- Configuration options
+- Best practices
+- Local DNS hosting
+- Troubleshooting
+
+Check the [:books: DOCS.md][docs] for full details.
+
+## DNS Flow and Protocol Options
+
+> This diagram illustrates how DNS queries flow through your network, showing both unencrypted (🔓) and encrypted (🔐) paths. Local devices can use either standard DNS or secure protocols (DoH/DoT/DoQ) to query the Technitium DNS Server, which then forwards requests to Cloudflare using selected dns_forwarders.
+
+![DNS flow diagram][dns-diagram]
+
+### Key Points
+
+- 🏡 **Local Network**: Devices and router can use any supported protocol
+- 🔒 **Security Options**: Choose between standard DNS or encrypted protocols
+- 🌐 **Flexible Forwarding**: All protocols supported for external queries
+- ⚡ **Modern Standards**: Full support for DoH, DoT, and DoQ
+
+## 💡 Support
+
+Got questions?
+
+- Create an [issue on GitHub][issue] for bug reports, feature requests, or questions
+- Add a ⭐️ [star on GitHub][repository] to support the project
+
+## 🤝 Contributing
+
+This is an active open-source project. We welcome contributions from anyone interested in using or improving the code:
+
+- Fork the repository
+- Make your changes
+- Submit a pull request
+- Follow the coding standards
+
+## 👥 Authors & Contributors
+
+The original setup of this repository is by [Jeppe Stærk][staerk].
+
+## 🙏 Acknowledgments
+
+Special thanks to [Franck Nijhof][frenck] and the [Home Assistant Community Add-ons][ha-addons] project for their invaluable work. This add-on heavily relies on their foundation:
+
+- Base container images
+- CI, workflows and best practices
+- Readme and docs templates
+
+Their open-source contributions make add-ons like this possible.
+
+## ⚠️ Disclaimer
+
+This is a third-party add-on for Home Assistant and not an official add-on. It is provided as-is, without warranty of any kind. While care has been taken in its development, use it at your own risk. Always ensure you have proper backups before making changes to your Home Assistant DNS settings. This add-on is not affiliated with Technitium Software.
+
+## 📄 License
+
+MIT License - Copyright (c) 2025 Jeppe Stærk
+
+[dns-diagram]: https://raw.githubusercontent.com/staerk-ha-addons/addon-technitium-dns-host/refs/heads/main/images/flowchart-dns.svg
+[docs]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/blob/main/technitium-dns/DOCS.md
+[frenck]: https://github.com/frenck
+[issue]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/issues
+[releases-shield]: https://img.shields.io/github/release/staerk-ha-addons/addon-technitium-dns-host.svg
+[releases]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/releases
+[repository]: https://github.com/staerk-ha-addons/repository
+[staerk]: https://github.com/jepestaerk
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+[license-shield]: https://img.shields.io/github/license/staerk-ha-addons/addon-technitium-dns-host.svg
+[ha-addons]: https://addons.community/
