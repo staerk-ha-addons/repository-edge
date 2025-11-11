@@ -98,10 +98,10 @@ MIT License - Copyright (c) 2025 Jeppe Stærk
 [technitium-dns-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
 [technitium-dns-armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
 [technitium-dns-i386-shield]: https://img.shields.io/badge/i386-no-red.svg
-[addon-technitium-dns-host]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/tree/81941c2
-[addon-doc-technitium-dns-host]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/blob/81941c2/README.md
+[addon-technitium-dns-host]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/tree/69b7a0b
+[addon-doc-technitium-dns-host]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/blob/69b7a0b/README.md
 [technitium-dns-host-issue]: https://github.com/staerk-ha-addons/addon-technitium-dns-host/issues
-[technitium-dns-host-version-shield]: https://img.shields.io/badge/version-81941c2-blue.svg
+[technitium-dns-host-version-shield]: https://img.shields.io/badge/version-69b7a0b-blue.svg
 [technitium-dns-host-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [technitium-dns-host-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [technitium-dns-host-armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg

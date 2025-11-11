@@ -1,1 +1,1 @@
-- Merge branch 'staerk-ha-addons:main' into main
+- fix: Ensure host_network is enabled in the Technitium DNS configuration
