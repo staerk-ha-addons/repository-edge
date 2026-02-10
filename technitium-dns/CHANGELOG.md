@@ -1,4 +1,15 @@
 # Changelog since v1.14.1
+- 🐛 Fix yamllint truthy warning in auto-release workflow
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com> 
+- ✨ Add auto-release workflow for DNS server updates
+
+- Add host_network note to README
+- Add host_network: true to config.yaml
+- Add auto-release workflow that publishes draft releases when
+  DNS_SERVER_VERSION is updated by Renovate (after CI passes)
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com> 
 - ⬆️ Update ghcr.io/hassio-addons/debian-base Docker tag to v9.2.0 (#24)
 
 This PR contains the following updates:
