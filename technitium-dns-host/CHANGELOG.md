@@ -1,1 +1,0 @@
-- fix: Ensure host_network is enabled in the Technitium DNS configuration
