@@ -1,4 +1,43 @@
 # Changelog since v15.3.0
+- 👷 Make Renovate reliably auto-upgrade the repo (#40)
+
+## Description
+
+Renovate already had auto-merge fully enabled (`automerge`,
+`platformAutomerge`, squash, no dashboard approval), but two things
+blocked it in practice. This removes both.
+
+### 1. Remove `.github/dependabot.yaml`
+Dependabot was configured for `github-actions`, `docker`, and
+`devcontainers` — all of which Renovate already handles. Dependabot's
+PRs **don't** auto-merge, so it just produced competing/duplicate PRs
+(e.g. the `actions/checkout` v6→v7 double-up in #36/#37). Renovate owns
+everything now.
+
+### 2. Add `helpers:pinGitHubActionDigests`
+The repo's zizmor check enforces `unpinned-uses` (Actions must be
+SHA-pinned). Renovate was proposing **bare tags** (`@v7`), which can
+never pass zizmor → those PRs could never go green → never auto-merged.
+Pinning to commit SHAs makes Action bumps pass zizmor **and** keeps them
+updated (Renovate tracks the digest, with a version comment). Also a
+supply-chain win.
+
+## Effect
+- One bot (Renovate), no duplicates.
+- DNS server / base image / .NET / Debian package / Action /
+devcontainer updates all create + auto-merge once CI is green.
+- CI still gates every merge (Renovate won't merge a red PR — exactly
+what stopped the broken .NET 10 bump from landing).
+
+## Type of Change
+- [x] 👷 CI / maintenance
+
+## Follow-up (not in this PR)
+- Renovate deprecation: `fileMatch` → `managerFilePatterns` in the
+custom managers. Non-blocking; left out here to avoid touching the
+update-detection regexes in the same PR that enables auto-merge.
+
+Co-authored-by: Claude Opus 4.8 <noreply@anthropic.com> 
 - 👷 Harden auto-release: SHA-pin checkout v7 & set make_latest (#39)
 
 ## Description
