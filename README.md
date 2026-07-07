@@ -22,6 +22,7 @@ If you are more interested in stable releases of our add-ons:
 
 <https://github.com/staerk-ha-addons/repository>
 
+
 ## About
 
 Home Assistant add-ons repository by Jeppe Stærk. These add-ons extend the functionality of your Home Assistant installation.
@@ -52,6 +53,7 @@ https://github.com/staerk-ha-addons/repository-edge
 Self-hosted DNS server with Home Assistant add-on integration.
 
 [:books: Technitium DNS Server add-on documentation][addon-doc-technitium-dns]
+
 
 ## Support
 
